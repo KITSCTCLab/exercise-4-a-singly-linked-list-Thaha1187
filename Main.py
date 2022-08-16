@@ -1,6 +1,5 @@
 from typing import Optional
 
-
 class Node:
     """
     Provide necessary documentation
@@ -11,7 +10,6 @@ class Node:
         """
         self.data = data
         self.next = next
-
 
 class LinkedList:
     """
@@ -29,13 +27,22 @@ class LinkedList:
         :param data: integer data that will be used to create a node
         """
         # Write code here
+        newNode = Node(data)
+        if(self.head):
+            current = self.head
+            while(current.next):
+                current = current.next
+                current.next = newNode
+        else:
+            self.head = newNode
 
     def status(self):
         """
         It prints all the elements of list.
         """
         # write code here
-
+        if(self.head != NULL):
+         
 
 class Solution:
     """
