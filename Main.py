@@ -84,7 +84,7 @@ class Solution:
             second_list.insert_at_end(data)
         solution = Solution()
         new_list = solution.addTwoNumbers(first_list, second_list)
-        new_list.status
+        new_list.statu
 
 # Do not edit the following code      
 # Create an instance for LinkedList
