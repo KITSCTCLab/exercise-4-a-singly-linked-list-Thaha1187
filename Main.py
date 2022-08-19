@@ -34,7 +34,7 @@ class LinkedList:
         else:
             while current.next is not None:
                 current = current.next
-            current.next = new
+                current.next = new
 
     def status(self):
         """
@@ -74,17 +74,7 @@ class Solution:
                 num = str(curr.data) + num
                 curr = curr.next
             return int(num)
-        first_list = LinkedList()
-        second_list = LinkedList()
-        data_for_first_list = list(map(int, input().strip().split(" ")))
-        for data in data_for_first_list:
-            first_list.insert_at_end(data)
-        data_for_second_list = list(map(int, input().strip().split(" ")))
-        for data in data_for_second_list:
-            second_list.insert_at_end(data)
-        solution = Solution()
-        new_list = solution.addTwoNumbers(first_list, second_list)
-        new_list.status()
+      
 
 # Do not edit the following code      
 # Create an instance for LinkedList
