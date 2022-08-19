@@ -9,7 +9,7 @@ class Node:
         Provide necessary documentation
         """
         self.data = data
-        self.next = next
+        self.next = next()
 
 class LinkedList:
     """
@@ -27,21 +27,26 @@ class LinkedList:
         :param data: integer data that will be used to create a node
         """
         # Write code here
-        newNode = Node(data)
-        if(self.head):
-            current = self.head
-            while(current.next):
-                current = current.next
-                current.next = newNode
+        new = Node(data, None)
+        current = self.head
+        if current is None:
+            self.head = new
         else:
-            self.head = newNode
+            while current.next is not None:
+                current = current.next
+            current.next = new
 
     def status(self):
         """
         It prints all the elements of list.
         """
         # write code here
-        if(self.head != NULL):
+        elements = []
+        current = self.head
+        while current:
+            elements.append(current.data)
+            current = current.next
+        print(elements)
          
 
 class Solution:
@@ -55,8 +60,31 @@ class Solution:
         :return: returns the sum as a linked list
         """
         # Write code here
-        
-        
+        result = self.get_num(first_list) + self.get_num(second_list)
+        sum_list = LinkedList()
+        for digit in list(map(int, str(result)[::-1])):
+            sum_list.insert_at_end(digit)
+        return sum_list
+        def get_num(self, l: Optional[LinkedList]) -> int:
+            curr = l.head
+            if curr is None:
+                return 0
+            num = ""
+            while curr is not None:
+                num = str(curr.data) + num
+                curr = curr.next
+            return int(num)
+        first_list = LinkedList()
+        second_list = LinkedList()
+        data_for_first_list = list(map(int, input().strip().split(" ")))
+        for data in data_for_first_list:
+            first_list.insert_at_end(data)
+        data_for_second_list = list(map(int, input().strip().split(" ")))
+        for data in data_for_second_list:
+            second_list.insert_at_end(data)
+        solution = Solution()
+        new_list = solution.addTwoNumbers(first_list, second_list)
+        new_list.status
 
 # Do not edit the following code      
 # Create an instance for LinkedList
