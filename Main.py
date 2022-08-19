@@ -1,6 +1,6 @@
 from typing import Optional
 
-class Node
+class Node:
     """
     Provide necessary documentation
     """
@@ -84,7 +84,7 @@ class Solution:
             second_list.insert_at_end(data)
         solution = Solution()
         new_list = solution.addTwoNumbers(first_list, second_list)
-        new_list.statu
+        new_list.status()
 
 # Do not edit the following code      
 # Create an instance for LinkedList
