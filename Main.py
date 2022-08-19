@@ -1,6 +1,6 @@
 from typing import Optional
 
-class Node:
+class Node
     """
     Provide necessary documentation
     """
